@@ -6,7 +6,8 @@ import Form from "./components/Form";
 class App extends React.Component {
     getRecipe(e) {
         e.preventDefault();
-        console.log("Worked!")
+        const recipeName = e.target.elements.recipeName.value;
+        console.log("Worked!: " + recipeName);
     }
 
     render() {
