@@ -6,7 +6,6 @@ import Form from "./components/Form";
 const API_KEY = "ad3e0a5631c7c6fd39d45b5e47bab5c9";
 
 class App extends React.Component {
-
     state = {
         recipes: []
     };
@@ -19,7 +18,6 @@ class App extends React.Component {
         this.setState();
         console.log(data.recipes[3].recipe_id);
     };
-
     render() {
         return (
             <>
