@@ -2,22 +2,25 @@ import React from 'react';
 import './App.css';
 
 import Form from "./components/Form";
+import Recipes from "./components/Recipes";
 
 const API_KEY = "ad3e0a5631c7c6fd39d45b5e47bab5c9";
 
 class App extends React.Component {
+
     state = {
-        recipes: []
+        recipesVal: []
     };
 
     getRecipe = async (e) => {
         e.preventDefault();
         const recipeName = e.target.elements.recipeName.value;
-        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken`);
+        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=5`);
         const data = await api_call.json();
-        this.setState({recipes: data});
-        console.log(data);
+        this.setState({recipesVal: data.recipes});
+        console.log(this.state.recipesVal);
     };
+
     render() {
         return (
             <>
@@ -25,7 +28,20 @@ class App extends React.Component {
                     <header className="app-header">
                         <h1 className="app-title">React Search</h1>
                     </header>
+
                     <Form getRecipe={this.getRecipe}/>
+
+                    <Recipes recipesVal={this.state.recipesVal}/>
+
+                    {/*{this.state.recipesVal.map((recipe) => {*/}
+                        {/*return (*/}
+                            {/*<div key={recipe.recipe_id}>*/}
+                                {/*<h3>{recipe.title}</h3>*/}
+                                {/*<img src={recipe.image_url} alt={recipe.title}/>*/}
+                            {/*</div>*/}
+                        {/*);*/}
+                    {/*})}*/}
+
                 </div>
             </>
         );
