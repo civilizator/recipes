@@ -15,8 +15,8 @@ class App extends React.Component {
         const recipeName = e.target.elements.recipeName.value;
         const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken`);
         const data = await api_call.json();
-        this.setState();
-        console.log(data.recipes[3].recipe_id);
+        this.setState({recipes: data});
+        console.log(data);
     };
     render() {
         return (
