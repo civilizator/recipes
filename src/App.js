@@ -11,22 +11,22 @@ class App extends React.Component {
         const recipeName = e.target.elements.recipeName.value;
         e.preventDefault();
 
-        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken&count=10`);
+        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken`);
         const data = await api_call.json();
 
-        console.log(data.recipes[2]);
+        console.log(data);
     };
 
     render() {
         return (
-            <>
+
                 <div className="app">
                     <header className="app-header">
                         <h1 className="app-title">React Search</h1>
                     </header>
                     <Form getRecipe={this.getRecipe}/>
                 </div>
-            </>
+            
         );
     }
 }
