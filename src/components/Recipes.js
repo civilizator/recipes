@@ -9,14 +9,8 @@ const Recipes = (props) => (
                         <div className="recipes__box">
                             <img className="recipes__box-img" src={recipe.image_url} alt={recipe.title}/>
                             <div className="recipe__text">
-                                <h6 className="recipes__title">
-                                    {recipe.title.length < 20 ? `${recipe.title}` : `
-                                    ${recipe.title.substring(0, 23)}...`}
-                                </h6>
-                                <p className="recipes__subtitle">Publiser: <span>
-                                    {recipe.publisher}
-                                </span>
-                                </p>
+                                <h6 className="recipes__title">{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 23)}...`}</h6>
+                                <p className="recipes__subtitle">Publiser: <span>{recipe.publisher}</span></p>
                                 <button className="recipe_buttons">View Recipe</button>
                             </div>
                         </div>
