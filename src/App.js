@@ -33,16 +33,6 @@ class App extends React.Component {
                     <Form getRecipe={this.getRecipe}/>
 
                     <Recipes recipesVal={this.state.recipesVal}/>
-
-                    {/*{this.state.recipesVal.map((recipe) => {*/}
-                        {/*return (*/}
-                            {/*<div key={recipe.recipe_id}>*/}
-                                {/*<h3>{recipe.title}</h3>*/}
-                                {/*<img src={recipe.image_url} alt={recipe.title}/>*/}
-                            {/*</div>*/}
-                        {/*);*/}
-                    {/*})}*/}
-
                 </div>
             </>
         );
