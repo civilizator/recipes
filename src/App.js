@@ -10,7 +10,7 @@ const API_KEY = "73ca04584c426b6e1a9376f4193ed68c";
 class App extends React.Component {
 
     state = {
-        recipesVal: []
+        recipes: []
     };
 
     getRecipe = async (e) => {
@@ -18,8 +18,8 @@ class App extends React.Component {
         const recipeName = e.target.elements.recipeName.value;
         const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=10`);
         const data = await api_call.json();
-        this.setState({recipesVal: data.recipes});
-        console.log(this.state.recipesVal);
+        this.setState({recipes: data.recipes});
+        console.log(this.state.recipes);
     };
 
     render() {
@@ -32,7 +32,7 @@ class App extends React.Component {
 
                     <Form getRecipe={this.getRecipe}/>
 
-                    <Recipes recipesVal={this.state.recipesVal}/>
+                    <Recipes recipes={this.state.recipes}/>
                 </div>
             </>
         );
