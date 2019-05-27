@@ -1,7 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-// const API_KEY = "ad3e0a5631c7c6fd39d45b5e47bab5c9";
-const API_KEY = "73ca04584c426b6e1a9376f4193ed68c";
+const API_KEY = "ad3e0a5631c7c6fd39d45b5e47bab5c9";
+
+// const API_KEY = "73ca04584c426b6e1a9376f4193ed68c";
 
 class Recipe extends React.Component {
 
@@ -20,12 +22,23 @@ class Recipe extends React.Component {
     render() {
         const recipe = this.state.activeRecipe;
         return (
-          <div className="container">
-            <div className="active-recipe">
-                <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
-                <h1 className="active-recipe__title">{recipe.title}</h1>
+            <div className="container">
+                {this.state.activeRecipe.length !== 0 &&
+
+                <div className="active-recipe">
+                    <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
+                    <h3 className="active-recipe__title">{recipe.title}</h3>
+                    <h4 className="active-recipe__publisher">Publisher: <span>{recipe.publisher}</span></h4>
+                    <p className="active-recipe__website">
+                        Website: <span><a href={recipe.publisher_url}>{recipe.publisher_url}</a></span>
+                    </p>
+                    <button className="active-recipe__button">
+                        <Link to="/">Go Home</Link>
+                    </button>
+                </div>
+
+                }
             </div>
-          </div>
         );
     }
 }
