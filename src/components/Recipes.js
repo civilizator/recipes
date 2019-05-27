@@ -25,6 +25,7 @@ const Recipes = (props) => (
             })}
         </div>
     </div>
+
 );
 
 export default Recipes;
