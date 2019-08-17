@@ -4,8 +4,7 @@ import './App.css';
 import Form from "./components/Form";
 import Recipes from "./components/Recipes";
 
-const API_KEY = "ad3e0a5631c7c6fd39d45b5e47bab5c9";
-// const API_KEY = "73ca04584c426b6e1a9376f4193ed68c";
+const API_KEY = "Your API Key";
 
 class App extends React.Component {
 
