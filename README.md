@@ -1,4 +1,4 @@
-`yarn install` or `npm instal`
+`yarn install` or `npm install`
 
 Get API key [food2fork](https://www.food2fork.com/about/api)
 <br>
