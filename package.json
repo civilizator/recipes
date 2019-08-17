@@ -9,6 +9,14 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
   },
+  "originalRepository": {
+    "type": "git",
+    "url": "https://github.com/hamza-mirza/react-recipe-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/civilizator/recipes"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

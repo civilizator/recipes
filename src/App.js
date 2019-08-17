@@ -4,7 +4,7 @@ import './App.css';
 import Form from "./components/Form";
 import Recipes from "./components/Recipes";
 
-const API_KEY = "Your API Key";
+const API_KEY = "Your API KEY";
 
 class App extends React.Component {
 
@@ -18,7 +18,7 @@ class App extends React.Component {
         const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=10`);
         const data = await api_call.json();
         this.setState({recipes: data.recipes});
-        console.log(this.state.recipes);
+        // console.log(this.state.recipes);
     };
 
     componentDidMount = () => {
@@ -42,7 +42,7 @@ class App extends React.Component {
 
                     <Form getRecipe={this.getRecipe}/>
 
-                    <Recipes recipes={this.state.recipes}/>
+                    <Recipes recipes={this.state.recipes || []}/>
                 </div>
             </>
         );
